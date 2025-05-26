@@ -5,7 +5,7 @@ const searchBtn = document.querySelector(".btn");
 const city = document.getElementById("city");
 const weather = document.getElementById("weather");
 const temp = document.getElementById("temperature");
-const uv = document.getElementById("sun-uv");
+const pressureA = document.getElementById("sun-uv");
 const humid = document.getElementById("humidity");
 const wind = document.getElementById("wind-speed");
 const tempFell = document.getElementById("feeling-temperature");
@@ -41,6 +41,7 @@ async function infoGet(latValue, longValue) {
 	wind.textContent = data.wind.speed;
 	weather.textContent = data.weather[0].main;
 	humid.textContent = data.main.humidity;
+    pressureA.textContent = data.main.pressure;
 	tempFell.textContent = (data.main.feels_like - 273, 15).toFixed();
 
 	if (data.weather[0].main === "Clouds") {
