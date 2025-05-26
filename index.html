@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+		<title>Weather Dashboard</title>
+	</head>
+	<body>
+		<header>
+			<form class="geo-form">
+				<div class="geo-form-fields">
+					<label for="geo-lat">Lat</label>
+					<input
+						id="geo-lat"
+						class="input block"
+						type="number"
+						name="geo-lat"
+					/>
+					<label for="geo-long">long</label>
+					<input
+						id="geo-long"
+						class="input block"
+						type="number"
+						name="geo-long"
+					/>
+				</div>
+				<button class="btn nblock" type="submit">SEARCH</button>
+			</form>
+		</header>
+		<main>
+			<section class="weather-date">
+				<div class="card blue white-text block">
+					<div class="card-info">
+						<h5 id="city">Lyon</h5>
+						<h4 id="weather">Clear</h4>
+						<h1><span id="temperature">21</span>°C</h1>
+					</div>
+					<div class="card-icon">
+						<svg
+							class="icon icon-large"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+						>
+							<title>weather-partly-cloudy</title>
+							<path
+								d="M12.74,5.47C15.1,6.5 16.35,9.03 15.92,11.46C17.19,12.56 18,14.19 18,16V16.17C18.31,16.06 18.65,16 19,16A3,3 0 0,1 22,19A3,3 0 0,1 19,22H6A4,4 0 0,1 2,18A4,4 0 0,1 6,14H6.27C5,12.45 4.6,10.24 5.5,8.26C6.72,5.5 9.97,4.24 12.74,5.47M11.93,7.3C10.16,6.5 8.09,7.31 7.31,9.07C6.85,10.09 6.93,11.22 7.41,12.13C8.5,10.83 10.16,10 12,10C12.7,10 13.38,10.12 14,10.34C13.94,9.06 13.18,7.86 11.93,7.3M13.55,3.64C13,3.4 12.45,3.23 11.88,3.12L14.37,1.82L15.27,4.71C14.76,4.29 14.19,3.93 13.55,3.64M6.09,4.44C5.6,4.79 5.17,5.19 4.8,5.63L4.91,2.82L7.87,3.5C7.25,3.71 6.65,4.03 6.09,4.44M18,9.71C17.91,9.12 17.78,8.55 17.59,8L19.97,9.5L17.92,11.73C18.03,11.08 18.05,10.4 18,9.71M3.04,11.3C3.11,11.9 3.24,12.47 3.43,13L1.06,11.5L3.1,9.28C3,9.93 2.97,10.61 3.04,11.3M19,18H16V16A4,4 0 0,0 12,12A4,4 0 0,0 8,16H6A2,2 0 0,0 4,18A2,2 0 0,0 6,20H19A1,1 0 0,0 20,19A1,1 0 0,0 19,18Z"
+							/>
+						</svg>
+					</div>
+				</div>
+			</section>
+			<section class="weather-gallery">
+				<div class="card">
+					<div class="card-info">
+						<h5>UV Indice</h5>
+						<p>
+							<span id="sun-uv" class="card-data" data-sun-uv>Low</span>
+						</p>
+					</div>
+					<div class="card-icon">
+						<svg
+							class="icon"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+						>
+							<title>white-balance-sunny</title>
+							<path
+								d="M3.55 19.09L4.96 20.5L6.76 18.71L5.34 17.29M12 6C8.69 6 6 8.69 6 12S8.69 18 12 18 18 15.31 18 12C18 8.68 15.31 6 12 6M20 13H23V11H20M17.24 18.71L19.04 20.5L20.45 19.09L18.66 17.29M20.45 5L19.04 3.6L17.24 5.39L18.66 6.81M13 1H11V4H13M6.76 5.39L4.96 3.6L3.55 5L5.34 6.81L6.76 5.39M1 13H4V11H1M13 20H11V23H13"
+							/>
+						</svg>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-info">
+						<h5>Humidity</h5>
+						<div class="card-subtitle">
+							<p>
+								<span id="humidity">95</span>
+								<span>%</span>
+							</p>
+						</div>
+					</div>
+					<div class="card-icon">
+						<svg
+							class="icon"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+						>
+							<title>water</title>
+							<path
+								d="M12,20A6,6 0 0,1 6,14C6,10 12,3.25 12,3.25C12,3.25 18,10 18,14A6,6 0 0,1 12,20Z"
+							/>
+						</svg>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-info">
+						<h5>Wind Speed</h5>
+						<div class="card-subtitle">
+							<svg
+								class="icon"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 24 24"
+							>
+								<title>arrow-bottom-left</title>
+								<path d="M19,6.41L17.59,5L7,15.59V9H5V19H15V17H8.41L19,6.41Z" />
+							</svg>
+							<p>
+								<span id="wind-speed" class="card-data" data-wind-speed>5</span>
+								<span>km/h</span>
+							</p>
+						</div>
+					</div>
+					<div class="card-icon">
+						<svg
+							class="icon"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+						>
+							<title>weather-windy</title>
+							<path
+								d="M4,10A1,1 0 0,1 3,9A1,1 0 0,1 4,8H12A2,2 0 0,0 14,6A2,2 0 0,0 12,4C11.45,4 10.95,4.22 10.59,4.59C10.2,5 9.56,5 9.17,4.59C8.78,4.2 8.78,3.56 9.17,3.17C9.9,2.45 10.9,2 12,2A4,4 0 0,1 16,6A4,4 0 0,1 12,10H4M19,12A1,1 0 0,0 20,11A1,1 0 0,0 19,10C18.72,10 18.47,10.11 18.29,10.29C17.9,10.68 17.27,10.68 16.88,10.29C16.5,9.9 16.5,9.27 16.88,8.88C17.42,8.34 18.17,8 19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14H5A1,1 0 0,1 4,13A1,1 0 0,1 5,12H19M18,18H4A1,1 0 0,1 3,17A1,1 0 0,1 4,16H18A3,3 0 0,1 21,19A3,3 0 0,1 18,22C17.17,22 16.42,21.66 15.88,21.12C15.5,20.73 15.5,20.1 15.88,19.71C16.27,19.32 16.9,19.32 17.29,19.71C17.47,19.89 17.72,20 18,20A1,1 0 0,0 19,19A1,1 0 0,0 18,18Z"
+							/>
+						</svg>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-info">
+						<h5>Feeling Temperature</h5>
+						<div class="card-subtitle">
+							<p>
+								<span id="feeling-temperature">21</span>
+								°C
+							</p>
+						</div>
+					</div>
+					<div class="card-icon">
+						<svg
+							class="icon"
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 24 24"
+						>
+							<title>thermometer</title>
+							<path
+								d="M15 13V5A3 3 0 0 0 9 5V13A5 5 0 1 0 15 13M12 4A1 1 0 0 1 13 5V8H11V5A1 1 0 0 1 12 4Z"
+							/>
+						</svg>
+					</div>
+				</div>
+			</section>
+		</main>
+		<script src="app.js"></script>
+	</body>
+</html>
